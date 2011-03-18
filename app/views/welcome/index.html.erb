@@ -2,4 +2,10 @@
 
 <p><%= Time.now %></p>
 
+<ul>
+  <%- @videos.each do |video| %>
+    <li><%= video.title %></li>
+  <% end %>
+</ul>
+
 <p><%= link_to "Submit a video", new_video_path %></p>
