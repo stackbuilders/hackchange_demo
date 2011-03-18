@@ -1,0 +1,18 @@
+<h1>Submit a New Video</h1>
+
+<%= form_for Video.new do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br />
+
+    <%= f.label :submitter %>
+    <%= f.text_field :submitter %>
+
+    <br />
+
+    <%= f.label :embed %>
+    <p>
+      <%= f.text_area :embed %>
+    </p>
+
+    <%= f.submit %>
+<% end %>
