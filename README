@@ -1,5 +1,11 @@
 h1. Rails App
 
+Below is a rough set of steps to walk through teaching a beginning course on Rails, Ruby, and web development. The assumption is that the students will have already been through a crash course (a few days) on HTML and CSS. The thinking behind this is that the students will have more fun and be more engaged if they're building something as they're learning.
+
+We start off with the basic Rails steps to give the satisfaction of creating something quickly. The first week and a half is going through some rough Rails concepts. For the last half of the second week we get into some basic programming concepts with Ruby. The idea here is that they've already created something and now we can show them how/what they did. Going forward we'll reference the basic concepts whenever they can be tied back to what is being done in Rails.
+
+We should create labs and hand on assignments whenever possible.
+
 * rails new hackchange_demo
 * cd hackchange_demo
 * rails s
@@ -83,3 +89,43 @@ h2. Wiring up index
 * Explain variables
 * Explain collection
 * Add index method, iterator
+
+h2. Edit a video
+
+* Explain route helpers
+* Explain REST (GET,PUT,POST,DELETE) and how it relates to routes.
+* Add the edit link to the index
+* Click on link, see fail
+* make note of the URL that it goes to. /videos/1/edit
+* Create the edit action
+* add code @video = Video.find(params[:id])
+* create edit.html.erb. For now we're going to duplicate a lot of stuff to keep things simple. Later we can explain partials by having them refactor the new and edit views to make use of a form partial.
+* try to edit a video, submit see error. Explain that Rails magically looks for an "update" action. Talk more about REST.
+* create the Update action. First, find the video. We'll come back to how to use before_filters later.
+* Go through updating a video
+* Add a delete link to the index
+  TODO: why in the hell does this not work as a link?!
+* watch it break, implement the action
+
+h2. Basic programming concepts (inspired by Ruby in 20 minutes)
+
+* methods
+* classes
+* types (arrays, hashes, strings, numbers, symbols)
+* flow-control
+* iteration
+* Should come up with some labs to use these concepts
+* Go back through what they've written so far and see how it applies.
+
+h2. Validation
+
+* talk about motivation behind validation
+* use validates_presence_of in Video
+* update the new form and edit forms to include validation
+* update the update and create actions to verify that validation passed
+* show the errors on object
+
+h2. Partials
+
+* talk about motivation behind partials
+* refactor the new and edit views to use a form partial
